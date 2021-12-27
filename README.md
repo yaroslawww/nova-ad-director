@@ -34,9 +34,6 @@ php artisan vendor:publish --provider="NovaAdDirector\ServiceProvider" --tag="la
 5. Then configure ads in your system
 
 ```php
-use App\Http\View\ViewModels\Front\FrontpageView;
-use App\Models\CMS\CMSPageSetting;
-use App\Nova\PageSettings\Templates\HomePage;
 use NovaAdDirector\Facades\NovaAdDirector;
 
 class FrontpageController extends Controller
@@ -44,9 +41,9 @@ class FrontpageController extends Controller
     public function __invoke()
     {
         NovaAdDirector::prepareAds([
-            'header-front' => NovaAdDirector::fallbackKey('header', 'frontpage'),
-            'posts-list-medium' => NovaAdDirector::fallbackKey('posts-medium', 'list', 'frontpage'),
-            'footer-front' => NovaAdDirector::fallbackKey('footer', 'frontpage'),
+            'header' => NovaAdDirector::fallbackKey('header', 'frontpage'),
+            'medium-posts-list' => NovaAdDirector::fallbackKey('medium', 'list', 'frontpage'),
+            'footer-v2' => NovaAdDirector::fallbackKey('footer', 'frontpage'),
         ]);
 
         return view('frontpage');
@@ -78,14 +75,14 @@ each this keys will search fallbacks:
 Administrator in admin can specify only `header` configuration and in any moment add some specific AD item like
 `header:page:contact-us` to override ad only for contact us page or `header:post` to use specific ad only on posts.
 
-#### Override default separator
+#### Override default fallback separator
 
 ```php
 class AppServiceProvider extends ServiceProvider
 {
     public function register()
     {
-       \NovaAdDirector\NovaAdDirector::setFallbackKeyConnector('---');
+       \NovaAdDirector\NovaAdDirector::setFallbackKeyConnector('/');
     }
 }
 ```
