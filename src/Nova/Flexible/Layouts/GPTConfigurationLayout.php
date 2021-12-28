@@ -83,7 +83,7 @@ class GPTConfigurationLayout extends Layout implements ConfigurationLayout
             /**
              * @var \NovaAdDirector\Nova\Flexible\Layouts\GPTTarget $target
              */
-            foreach ($this->targets as $target) {
+            foreach ($this->flexibleTargets as $target) {
                 if (($key = trim($target->target_key))
                     && ($value = trim($target->target_value))) {
                     $values = array_filter(array_map('trim', explode(',', $value)));
