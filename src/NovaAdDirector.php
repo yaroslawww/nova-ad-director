@@ -35,8 +35,8 @@ class NovaAdDirector
                                           )
                                           ->first();
         if ($adConfiguration
-            && !$adConfiguration->configuration->isEmpty()) {
-            $configuration = $adConfiguration->configuration->first();
+            && !$adConfiguration->flexibleConfiguration->isEmpty()) {
+            $configuration = $adConfiguration->flexibleConfiguration->first();
             if ($configuration instanceof ConfigurationLayout) {
                 $configuration->applyConfiguration($locationName);
             }

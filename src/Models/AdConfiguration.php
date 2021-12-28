@@ -28,7 +28,7 @@ class AdConfiguration extends Model
         return "{$this->key} ({$this->location})";
     }
 
-    public function getConfigurationAttribute()
+    public function getFlexibleConfigurationAttribute()
     {
         return $this->flexible('configuration', collect(config('nova-ad-director.flexible.configuration.layouts'))->mapWithKeys(fn ($i) => [(new $i)->name() => $i])->toArray());
     }
