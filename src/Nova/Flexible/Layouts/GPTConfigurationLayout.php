@@ -23,7 +23,7 @@ class GPTConfigurationLayout extends Layout implements ConfigurationLayout
 
     public function title(): string
     {
-        return trans("nova-ad-director::resource.layouts.{$this->title}");
+        return trans("nova-ad-director::resource.layouts.{$this->name}");
     }
 
     protected function targetsPreset()
