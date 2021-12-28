@@ -5,7 +5,7 @@ namespace NovaAdDirector\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use NovaAdDirector\Factories\AdConfigurationFactory;
-use Whitecube\NovaFlexibleContent\Concerns\HasFlexible;
+use NovaFlexibleContent\Concerns\HasFlexible;
 
 class AdConfiguration extends Model
 {

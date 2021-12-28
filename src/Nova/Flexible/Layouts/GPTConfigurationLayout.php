@@ -8,10 +8,10 @@ use AdDirector\GPT\Slot;
 use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\Text;
 use NovaAdDirector\Contracts\ConfigurationLayout;
-use Whitecube\NovaFlexibleContent\Concerns\HasFlexible;
-use Whitecube\NovaFlexibleContent\Flexible;
-use Whitecube\NovaFlexibleContent\Layouts\Layout;
-use Whitecube\NovaFlexibleContent\Layouts\Preset;
+use NovaFlexibleContent\Concerns\HasFlexible;
+use NovaFlexibleContent\Flexible;
+use NovaFlexibleContent\Layouts\Layout;
+use NovaFlexibleContent\Layouts\Preset;
 
 class GPTConfigurationLayout extends Layout implements ConfigurationLayout
 {
@@ -66,26 +66,26 @@ class GPTConfigurationLayout extends Layout implements ConfigurationLayout
         ];
     }
 
-    public function getTargetsAttribute()
+    public function getFlexibleTargetsAttribute()
     {
-        return $this->flexible('targets', $this->targetsPreset()->layoutMapping());
+        return $this->flexible('targets', $this->targetsPreset()->layouts());
     }
 
     public function applyConfiguration(string $locationName): static
     {
-        $slot =Slot::make(
+        $slot = Slot::make(
             $this->adUnitPath,
             $this->size,
-            $this->divId?:null
+            $this->divId ?: null
         );
 
-        if ($this->targets) {
+        if ($this->flexibleTargets) {
             /**
              * @var \NovaAdDirector\Nova\Flexible\Layouts\GPTTarget $target
              */
             foreach ($this->targets as $target) {
                 if (($key = trim($target->target_key))
-                   && ($value = trim($target->target_value))) {
+                    && ($value = trim($target->target_value))) {
                     $values = array_filter(array_map('trim', explode(',', $value)));
                     if (!empty($values)) {
                         $slot->addTarget($key, $values);

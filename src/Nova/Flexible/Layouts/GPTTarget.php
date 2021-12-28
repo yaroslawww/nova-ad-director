@@ -3,7 +3,7 @@
 namespace NovaAdDirector\Nova\Flexible\Layouts;
 
 use Laravel\Nova\Fields\Text;
-use Whitecube\NovaFlexibleContent\Layouts\Layout;
+use NovaFlexibleContent\Layouts\Layout;
 
 class GPTTarget extends Layout
 {

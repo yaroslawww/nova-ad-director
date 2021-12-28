@@ -8,7 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 use NovaAdDirector\NovaAdDirector;
-use Whitecube\NovaFlexibleContent\Flexible;
+use NovaFlexibleContent\Flexible;
 
 trait HasAdConfiguration
 {
