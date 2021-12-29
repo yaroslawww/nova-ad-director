@@ -30,7 +30,7 @@ php artisan vendor:publish --provider="NovaAdDirector\ServiceProvider" --tag="la
 2. Inherit or add to nova AdConfiguration Resource
 3. Inherit or add to auth service provider AdConfigurationPolicy
 4. If app uses configuration with "creatable==false" then developer need create new locations
-   manually `php artisan nova-ad-director:ad-config:create <key-name> <locaion-name>`
+   manually `php artisan nova-ad-director:ad-config:create <key-name> <location-name>`
 5. Then configure ads in your system
 
 ```php
