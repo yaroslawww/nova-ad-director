@@ -28,6 +28,11 @@ class AdConfigurationPolicy
         return true;
     }
 
+    public function replicate($user)
+    {
+        return config('nova-ad-director.replicable');
+    }
+
     public function delete($user)
     {
         return config('nova-ad-director.creatable');

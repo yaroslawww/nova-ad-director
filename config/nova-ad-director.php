@@ -5,7 +5,8 @@ return [
         'ad_configurations' => 'ad_configurations',
     ],
 
-    'creatable' => true,
+    'creatable'  => true,
+    'replicable' => false,
 
     'statuses' => [
         'active',

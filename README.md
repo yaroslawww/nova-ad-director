@@ -9,6 +9,11 @@
 
 Laravel nova ad manager to display advertise on site.
 
+| Nova | Package |
+|------|---------|
+| V1   | V1      |
+| V4   | V2      |
+
 ## Installation
 
 You can install the package via composer:

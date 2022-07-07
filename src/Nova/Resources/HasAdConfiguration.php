@@ -38,7 +38,7 @@ trait HasAdConfiguration
         return Text::make(trans('nova-ad-director::resource.fields.key'), 'key')
                    ->sortable()
                    ->placeholder(implode(NovaAdDirector::$fallbackKeyConnector, ['header', 'page', 'contact']))
-                   ->rules('required', 'regex:/^[a-z0-9_-]+$/i', 'max:150')
+                   ->rules('required', 'regex:/^[a-z0-9_\-'.NovaAdDirector::$fallbackKeyConnector.']+$/i', 'max:150')
                    ->readonly(!config('nova-ad-director.creatable'));
     }
 
