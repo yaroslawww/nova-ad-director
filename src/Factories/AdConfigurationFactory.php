@@ -5,6 +5,9 @@ namespace NovaAdDirector\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use NovaAdDirector\Models\AdConfiguration;
 
+/**
+ * @extends Factory<AdConfiguration>
+ */
 class AdConfigurationFactory extends Factory
 {
     protected $model = AdConfiguration::class;

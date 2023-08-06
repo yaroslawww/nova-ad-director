@@ -4,6 +4,9 @@ namespace NovaAdDirector\Nova\Resources;
 
 use Laravel\Nova\Resource;
 
+/**
+ * @extends Resource<\NovaAdDirector\Models\AdConfiguration>
+ */
 class AdConfiguration extends Resource
 {
     use HasAdConfiguration;

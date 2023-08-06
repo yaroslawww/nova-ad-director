@@ -13,7 +13,7 @@ class AdConfiguration extends Model
 
     protected $guarded = [];
 
-    public function getTable()
+    public function getTable(): string
     {
         return config('nova-ad-director.tables.ad_configurations');
     }
